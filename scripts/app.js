@@ -563,21 +563,42 @@ function initHeroPhone() {
   // O botão de pausa fica na faixa de posts (initMarquee) e para o celular também
   const stopped = () => document.documentElement.classList.contains('motion-paused');
 
-  // Fora da tela do topo, o celular não troca de post (não gasta processamento à toa)
+  // Só mantém o intervalo enquanto o celular está visível e pode animar.
   let offscreen = false;
-  document.addEventListener('screenchange', (e) => { offscreen = !e.detail.screen.contains(phone); });
+  let paused = false;
+  let timer = null;
+  let loaded = false;
+  const updatePlayback = () => {
+    const visible = phone.getClientRects().length > 0;
+    if (!loaded || document.hidden || paused || stopped() || offscreen || !visible) {
+      clearInterval(timer);
+      timer = null;
+      clearTimeout(likeTimer);
+      return;
+    }
+    if (timer !== null) return;
+    load(images[(current + 1) % images.length]);
+    timer = setInterval(() => show((current + 1) % images.length), 2800);
+  };
+  document.addEventListener('screenchange', (e) => {
+    offscreen = !e.detail.screen.contains(phone);
+    updatePlayback();
+  });
+  window.addEventListener('resize', updatePlayback);
+  document.addEventListener('visibilitychange', updatePlayback);
+  // O botão já atualiza a classe no HTML antes de este observador ser chamado.
+  new MutationObserver(updatePlayback).observe(document.documentElement, {
+    attributes: true, attributeFilter: ['class'],
+  });
 
   window.addEventListener('load', () => {
-    load(images[1]);
-    let paused = false;
-    phone.addEventListener('mouseenter', () => { paused = true; });
-    phone.addEventListener('mouseleave', () => { paused = false; });
-    phone.addEventListener('focusin', () => { paused = true; });
-    phone.addEventListener('focusout', () => { paused = false; });
-    setInterval(() => {
-      if (!document.hidden && !paused && !stopped() && !offscreen) show((current + 1) % images.length);
-    }, 2800);
-  });
+    loaded = true;
+    phone.addEventListener('mouseenter', () => { paused = true; updatePlayback(); });
+    phone.addEventListener('mouseleave', () => { paused = false; updatePlayback(); });
+    phone.addEventListener('focusin', () => { paused = true; updatePlayback(); });
+    phone.addEventListener('focusout', () => { paused = false; updatePlayback(); });
+    updatePlayback();
+  }, { once: true });
 }
 
 /* ── Números que contam até o valor final ─────────────────────── */
@@ -639,6 +660,7 @@ function initLightbox() {
   let index = 0;
   let title = '';
   let lastFocus = null;
+  let requestId = 0;
 
   const fullSrc = (slide) => {
     const img = slide.querySelector('img');
@@ -651,8 +673,8 @@ function initLightbox() {
     // mostra a miniatura (já carregada) na hora e troca pela versão grande quando ela chegar
     image.src = img.currentSrc || img.src;
     const full = new Image();
-    const target = index;
-    full.onload = () => { if (target === index) image.src = full.src; };
+    const request = ++requestId;
+    full.onload = () => { if (request === requestId) image.src = full.src; };
     full.onerror = () => { /* versão grande não carregou: continua mostrando a miniatura */ };
     full.src = fullSrc(slides[index]);
     image.alt = img.alt;
@@ -677,6 +699,7 @@ function initLightbox() {
   };
 
   const close = () => {
+    requestId++; // invalida também imagens pendentes de um carrossel já fechado
     lightbox.classList.remove('is-open');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('no-scroll');
@@ -923,6 +946,12 @@ function initDeck() {
       event.preventDefault();
       go(index);
     });
+  });
+
+  // Mudanças de fragmento pelo endereço ou histórico também precisam trocar a tela.
+  window.addEventListener('hashchange', () => {
+    const index = location.hash ? indexFor(location.hash.slice(1)) : 0;
+    if (index >= 0) go(index, { updateHash: false });
   });
 
   let frame = 0;

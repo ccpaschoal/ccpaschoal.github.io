@@ -1903,6 +1903,10 @@ body.no-scroll {
     transform: none;
   }
 
+  .nav-link:focus-visible {
+    outline-color: var(--white);
+  }
+
   .nav-link.is-active {
     background: var(--sand-200);
     color: var(--wine-800);
@@ -2399,6 +2403,7 @@ html.deck-on,
 .is-animating .deck-on .screen, .deck-on.is-animating .screen { will-change: transform; }
 /* animações infinitas só rodam na tela da frente; e o botão de pausa do celular para tudo que se move */
 .deck-on .screen:not(.is-current) *,
+.motion-paused .sticker,
 .motion-paused .marquee-track,
 .motion-paused .hero-phone * { animation-play-state: paused !important; }
 .marquee { position: relative; }
@@ -2725,7 +2730,8 @@ main:focus { outline: none; }
   box-shadow: 4px 4px 0 var(--navy-900);
   transform: rotate(var(--r, -6deg));
   pointer-events: none;
-  animation: sticker-wiggle 4s ease-in-out infinite;
+  /* Uma passagem curta evita movimento contínuo nas telas sem botão de pausa. */
+  animation: sticker-wiggle 4s ease-in-out;
 }
 .sticker--amarelo { background: var(--gold-400); }
 .sticker--rosa { background: #F4A6B0; }

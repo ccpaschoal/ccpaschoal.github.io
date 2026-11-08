@@ -1582,8 +1582,111 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 14px;
   margin-top: 32px;
+}
+
+/* ── Botões sociais expansíveis da seção Contatos ── */
+.social-expand-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px;
+  height: 50px;
+  padding: 0 14px;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--navy-900);
+  color: var(--sand-200);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  font-family: var(--font-display);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 0.2s var(--ease),
+              color 0.2s var(--ease),
+              box-shadow 0.2s var(--ease),
+              transform 0.2s var(--ease);
+}
+
+[data-theme='dark'] .social-expand-btn {
+  background: var(--gray-100);
+  color: var(--heading-strong);
+}
+
+.social-expand-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.social-expand-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.social-expand-label {
+  opacity: 0;
+  margin-left: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transform: translateX(6px);
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+  pointer-events: none;
+}
+
+.social-expand-btn:hover .social-expand-label,
+.social-expand-btn:focus-visible .social-expand-label {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.05s;
+}
+
+.social-expand-btn--whatsapp:hover,
+.social-expand-btn--whatsapp:focus-visible {
+  width: 154px;
+  background: #25D366;
+  color: #FFFFFF;
+}
+
+.social-expand-btn--gmail:hover,
+.social-expand-btn--gmail:focus-visible {
+  width: 126px;
+  background: #EA4335;
+  color: #FFFFFF;
+}
+
+.social-expand-btn--instagram:hover,
+.social-expand-btn--instagram:focus-visible {
+  width: 154px;
+  background: #E1306C;
+  color: #FFFFFF;
+}
+
+.social-expand-btn--linkedin:hover,
+.social-expand-btn--linkedin:focus-visible {
+  width: 144px;
+  background: #0A66C2;
+  color: #FFFFFF;
+}
+
+.social-expand-btn--github:hover,
+.social-expand-btn--github:focus-visible {
+  width: 132px;
+  background: var(--wine-700);
+  color: #FFFFFF;
+}
+
+.social-expand-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
 
 .btn-contact {

@@ -3065,6 +3065,16 @@ main:focus { outline: none; }
   font-weight: 700;
   font-size: 0.9rem;
   text-decoration: none;
+  background: var(--wine-700) !important;
+  color: var(--white) !important;
+  border: 2px solid transparent !important;
+  box-shadow: 4px 4px 0 var(--navy-900) !important;
+}
+
+.pricing-btn:hover {
+  background: var(--wine-800) !important;
+  color: var(--white) !important;
+  box-shadow: 6px 6px 0 var(--navy-900) !important;
 }
 
 .pricing-banner {

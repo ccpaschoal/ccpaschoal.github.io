@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camilla Paschoal · Catálogo Oficial de Serviços & Planos</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <script>
+    (function () {
+      try {
+        var tema = localStorage.getItem('tema');
+        if (!tema) tema = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', tema);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════════════════════════════
+       Identidade Visual Camilla Paschoal · Neobrutalismo Editorial
+       ══════════════════════════════════════════════════════════════ */
+    :root {
+      --navy-900: #0F2A40;
+      --navy-800: #1A3A52;
+      --blue-700: #2C5282;
+      --blue-500: #4A7BA7;
+      --sky-400: #6BA3D8;
+      --white: #FFFFFF;
+      --wine-700: #8B1E2D;
+      --wine-800: #6E1622;
+      --sand-200: #F1E6C8;
+      --sand-300: #E8D7A5;
+      --gold-400: #D9B65C;
+      --gray-100: #D9DEE4;
+      --gray-200: #C8CED6;
+      --gray-300: #AEB7C2;
+
+      /* Modo Claro */
+      --page-bg: #DCE5EE;
+      --card-bg: #FFFFFF;
+      --text: var(--navy-800);
+      --text-muted: #2C4766;
+      --heading: var(--navy-900);
+      --accent: var(--wine-700);
+      --border: var(--navy-900);
+      --shadow-color: var(--navy-900);
+      --shadow-sm: 4px 4px 0 var(--shadow-color);
+      --shadow-md: 6px 6px 0 var(--shadow-color);
+      --shadow-lg: 10px 10px 0 var(--shadow-color);
+    }
+
+    [data-theme='dark'] {
+      --gray-100: #2A3340;
+      --gray-200: #1F2730;
+      --gray-300: #3A4656;
+
+      --page-bg: #0D1622;
+      --card-bg: #1B283A;
+      --text: #DDE3EA;
+      --text-muted: #A2B1C2;
+      --heading: #FFFFFF;
+      --accent: #E8808C;
+      --border: #3A4B62;
+      --shadow-color: #060B12;
+      --shadow-sm: 4px 4px 0 var(--shadow-color);
+      --shadow-md: 6px 6px 0 var(--shadow-color);
+      --shadow-lg: 10px 10px 0 var(--shadow-color);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+      border-radius: 0 !important; /* Estilo 100% geométrico reto do portfólio */
+    }
+
+    body {
+      background-color: var(--page-bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    /* ══ Barra Superior ══ */
+    .top-bar {
+      background: var(--navy-900);
+      color: var(--white);
+      border-bottom: 3px solid var(--navy-800);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-logo-badge {
+      width: 42px;
+      height: 42px;
+      background: var(--gold-400);
+      color: var(--navy-900);
+      font-weight: 800;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--white);
+      box-shadow: 3px 3px 0 #000;
+    }
+
+    .brand-text h1 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-text p {
+      font-size: 0.76rem;
+      color: var(--sky-400);
+      font-weight: 600;
+    }
+
+    .actions-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-brutal {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--card-bg);
+      color: var(--text);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 0.55rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-brutal:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-brutal.primary {
+      background: var(--wine-700);
+      color: #FFFFFF;
+      border-color: #FFFFFF;
+      box-shadow: 4px 4px 0 #000;
+    }
+
+    .btn-brutal.gold {
+      background: var(--gold-400);
+      color: var(--navy-900);
+      border-color: var(--navy-900);
+    }
+
+    /* ══ Stickers ══ */
+    .sticker {
+      display: inline-block;
+      padding: 5px 11px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+      color: var(--navy-900);
+      border: 2px solid #FFFFFF;
+      outline: 2px solid var(--navy-900);
+      box-shadow: 3px 3px 0 var(--navy-900);
+      transform: rotate(var(--r, -3deg));
+    }
+    .sticker--amarelo { background: var(--gold-400); }
+    .sticker--rosa { background: #F4A6B0; }
+    .sticker--azul { background: var(--sky-400); }
+
+    /* ══ Container ══ */
+    .container {
+      max-width: 1360px;
+      margin: 2rem auto;
+      padding: 0 1.5rem 4rem 1.5rem;
+    }
+
+    /* Header */
+    .catalog-header {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .catalog-header .sticker,
+    .gift-banner .sticker {
+      position: static !important;
+      display: inline-block !important;
+      margin-bottom: 14px !important;
+    }
+
+    .catalog-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.4rem;
+    }
+
+    .catalog-header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 780px;
+    }
+
+    /* ══ Filtros de Categoria ══ */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .filter-tab {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      color: var(--text);
+      padding: 0.65rem 1.25rem;
+      font-size: 0.85rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-tab:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .filter-tab.active {
+      background: var(--wine-700);
+      color: #FFFFFF;
+      border-color: #FFFFFF;
+      box-shadow: 4px 4px 0 var(--shadow-color);
+    }
+
+    [data-theme='dark'] .filter-tab.active {
+      background: var(--wine-700);
+      color: #FFFFFF;
+    }
+
+    /* ══ Grade de Planos ══ */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .plan-card {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-top: 6px solid var(--wine-700);
+      box-shadow: var(--shadow-sm);
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .plan-card.featured {
+      border-top-color: var(--gold-400);
+      border-color: var(--gold-400);
+    }
+
+    .plan-card.sky {
+      border-top-color: var(--sky-400);
+    }
+
+    .plan-card.sky:hover {
+      border-color: var(--sky-400);
+    }
+
+    .plan-card.teto {
+      border-top-color: var(--wine-700);
+      border-color: var(--wine-700);
+    }
+
+    .plan-tag {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      background: var(--sand-200);
+      color: var(--navy-900);
+      margin-bottom: 12px;
+      border: 1px solid var(--navy-900);
+    }
+
+    [data-theme='dark'] .plan-tag {
+      background: var(--gray-300);
+      color: #fff;
+    }
+
+    .plan-tag.green { background: #34d399; color: #064e3b; }
+    .plan-tag.gold { background: var(--gold-400); color: var(--navy-900); }
+    .plan-tag.wine { background: var(--wine-700); color: #fff; }
+
+    .plan-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--heading);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .plan-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      line-height: 1.4;
+      min-height: 42px;
+    }
+
+    .plan-pricing-box {
+      background: rgba(15, 42, 64, 0.05);
+      border: 1px dashed var(--border);
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+
+    [data-theme='dark'] .plan-pricing-box {
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .pricing-main {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .pricing-main .currency {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .pricing-main .amount {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.02em;
+    }
+
+    .pricing-main .unit {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-left: 4px;
+    }
+
+    .plan-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 0.76rem;
+    }
+
+    .plan-split span {
+      display: block;
+    }
+
+    .plan-split .lbl {
+      color: var(--text-muted);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .plan-split .val {
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+    }
+
+    .features-list li {
+      font-size: 0.86rem;
+      color: var(--text);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.35;
+    }
+
+    .features-list .check {
+      color: var(--wine-700);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    [data-theme='dark'] .features-list .check {
+      color: #E8808C;
+    }
+
+    .btn-hire {
+      display: block;
+      text-align: center;
+      width: 100%;
+      padding: 12px 16px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-hire:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-hire.primary {
+      background: var(--wine-700);
+      color: #FFFFFF;
+      border-color: #FFFFFF;
+    }
+
+    .btn-hire.outline {
+      background: var(--card-bg);
+      color: var(--text);
+    }
+
+    /* ══ Banner de Sorteio de Brinde ══ */
+    .gift-banner {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-left: 8px solid var(--gold-400);
+      box-shadow: var(--shadow-md);
+      padding: 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .gift-banner h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+
+    .gift-banner p {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    .gift-list {
+      background: rgba(15, 42, 64, 0.05);
+      border: 1px dashed var(--border);
+      padding: 1rem 1.25rem;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    [data-theme='dark'] .gift-list {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    /* ══ Calculadora Interativa de Orçamento ══ */
+    .sim-section {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-md);
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .sim-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .sim-header h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--heading);
+    }
+
+    .sim-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .sim-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sim-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-height: 460px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .sim-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 42, 64, 0.04);
+      border: 1px solid var(--border);
+      padding: 0.85rem 1rem;
+    }
+
+    [data-theme='dark'] .sim-item-row {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .sim-item-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--heading);
+    }
+
+    .sim-item-price {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .counter {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .counter-btn {
+      width: 28px;
+      height: 28px;
+      background: var(--navy-900);
+      color: #fff;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .counter-btn:hover {
+      background: var(--wine-700);
+    }
+
+    .counter-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .sim-summary {
+      background: rgba(15, 42, 64, 0.06);
+      border: 2px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    [data-theme='dark'] .sim-summary {
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .sim-total-num {
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin: 0.35rem 0 1.25rem 0;
+      line-height: 1.1;
+    }
+
+    .sim-split-card {
+      background: var(--navy-900);
+      color: #fff;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .btn-whatsapp-send {
+      display: block;
+      text-align: center;
+      background: #25D366;
+      color: #052E16;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 1rem;
+      text-decoration: none;
+      border: 2px solid #052E16;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
+    }
+
+    .btn-whatsapp-send:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
+      background: #22c55e;
+    }
+
+    /* Políticas e Regras */
+    .policy-box {
+      border-top: 2px solid var(--border);
+      padding-top: 2rem;
+      margin-top: 2rem;
+    }
+
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .policy-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      padding: 1.25rem;
+    }
+
+    .policy-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .policy-text {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="top-bar">
+    <div class="brand-group">
+      <div class="brand-logo-badge">CP</div>
+      <div class="brand-text">
+        <h1>Camilla Paschoal</h1>
+        <p>Catálogo Oficial de Soluções & Planos</p>
+      </div>
+    </div>
+
+    <div class="actions-group">
+      <button class="btn-brutal" id="themeBtn" onclick="toggleTheme()" title="Trocar Tema">
+        <span id="themeIcon">☀️</span> <span id="themeLabel">Modo Claro</span>
+      </button>
+      <a href="index.html" class="btn-brutal primary">← Voltar ao Portfólio</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Cabeçalho -->
+    <div class="catalog-header">
+      <span class="sticker sticker--amarelo" style="--r:4deg; position:absolute; top:-12px; right:20px;" aria-hidden="true">preço justo & direto 🏷️</span>
+      <h2>Catálogo de Serviços & Presença Digital</h2>
+      <p>Artes estratégicas para redes sociais, vídeos curtos dinâmicos de alta retenção e sites one-page voltados para converter contatos direto no WhatsApp.</p>
+    </div>
+
+    <!-- Filtros de Categoria -->
+    <div class="filter-bar">
+      <button class="filter-tab active" onclick="filterPlans('all')">✨ Todos os Planos</button>
+      <button class="filter-tab" onclick="filterPlans('combos')">👑 Combos Completos (Até R$ 600)</button>
+      <button class="filter-tab" onclick="filterPlans('videos')">🎬 Cortes de Vídeo (Reels / TikTok)</button>
+      <button class="filter-tab" onclick="filterPlans('feed')">📱 Carrosséis & Feed</button>
+      <button class="filter-tab" onclick="filterPlans('web')">🌐 Mini Sites Portfólio</button>
+    </div>
+
+    <!-- Grade de Planos -->
+    <div class="plans-grid" id="plansGrid">
+
+      <!-- PLANO 1: Pacote 3 Vídeos -->
+      <article class="plan-card featured" data-category="videos">
+        <span class="plan-tag green">🔥 R$ 40 cada corte</span>
+        <h3 class="plan-title">🎬 Pacote 3 Vídeos Dinâmicos</h3>
+        <p class="plan-desc">3 edições dinâmicas de até 60s com cortes de respiro, legendas animadas sincronizadas e capa estática.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">120</span>
+            <span class="unit">/ pacote fechado</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 60,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 60,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> 3 vídeos dinâmicos de até 60 segundos</li>
+          <li><span class="check">✓</span> Cortes de silêncio, erros e pausas</li>
+          <li><span class="check">✓</span> Legendas animadas e sincronizadas</li>
+          <li><span class="check">✓</span> Capa estática para feed inclusa</li>
+          <li><span class="check">✓</span> 1 revisão diária inclusa</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%20o%20Pacote%20de%203%20V%C3%ADdeos%20(R$%20120)." target="_blank" rel="noopener noreferrer" class="btn-hire primary">Contratar via WhatsApp</a>
+      </article>
+
+      <!-- PLANO 2: Pacote 6 Vídeos -->
+      <article class="plan-card" data-category="videos">
+        <span class="plan-tag gold">R$ 30 cada corte</span>
+        <h3 class="plan-title">🎬 Pacote 6 Vídeos Dinâmicos</h3>
+        <p class="plan-desc">Frequência ideal para manter o perfil ativo com vídeos curtos e acelerar engajamento.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">180</span>
+            <span class="unit">/ pacote fechado</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 90,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 90,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> 6 vídeos dinâmicos de até 60s</li>
+          <li><span class="check">✓</span> Ritmo acelerado para retenção</li>
+          <li><span class="check">✓</span> Legendas dinâmicas sincronizadas</li>
+          <li><span class="check">✓</span> 6 capas para Reels inclusas</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%20o%20Pacote%20de%206%20V%C3%ADdeos%20(R$%20180)." target="_blank" rel="noopener noreferrer" class="btn-hire outline">Contratar via WhatsApp</a>
+      </article>
+
+      <!-- PLANO 3: Pacote 10 Vídeos -->
+      <article class="plan-card" data-category="videos">
+        <span class="plan-tag gold">R$ 25 cada corte</span>
+        <h3 class="plan-title">🎬 Pacote 10 Vídeos Dinâmicos</h3>
+        <p class="plan-desc">Escala completa de conteúdo em vídeo para o mês com o menor custo por unidade.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">250</span>
+            <span class="unit">/ pacote fechado</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 125,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 125,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> 10 vídeos dinâmicos de até 60s</li>
+          <li><span class="check">✓</span> Apenas R$ 25,00 por corte!</li>
+          <li><span class="check">✓</span> Legendas animadas e 10 capas</li>
+          <li><span class="check">✓</span> Economia massiva no volume</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%20o%20Pacote%20de%2010%20V%C3%ADdeos%20(R$%20250)." target="_blank" rel="noopener noreferrer" class="btn-hire outline">Contratar via WhatsApp</a>
+      </article>
+
+      <!-- PLANO 4: 10 Carrosséis Padrão + Brinde Sorteado -->
+      <article class="plan-card" data-category="feed">
+        <span class="plan-tag gold">🎁 Brinde Sorteado</span>
+        <h3 class="plan-title">📱 10 Carrosséis Padrão</h3>
+        <p class="plan-desc">10 carrosséis quadrados de até 10 slides cada + Sorteio em vídeo enviado no seu WhatsApp.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">250</span>
+            <span class="unit">/ 10 posts</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 125,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 125,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> 10 carrosséis 1080x1080 (até 10 slides cada)</li>
+          <li><span class="check">✓</span> Design estratégico com foco em retenção</li>
+          <li><span class="check">✓</span> <strong>Brinde Sorteado na Roleta:</strong> Cartão Interativo, +1 Carrossel Bônus ou 1 Vídeo</li>
+          <li><span class="check">✓</span> 1 revisão unificada por dia</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%2010%20Carross%C3%A9is%20Padr%C3%A3o%20(R$%20250)." target="_blank" rel="noopener noreferrer" class="btn-hire outline">Contratar via WhatsApp</a>
+      </article>
+
+      <!-- PLANO 5: 10 Carrosséis Panorâmicos + Brinde Sorteado -->
+      <article class="plan-card" data-category="feed">
+        <span class="plan-tag wine">🔥 Panorâmico 1080x1350</span>
+        <h3 class="plan-title">🔥 10 Carrosséis Panorâmicos</h3>
+        <p class="plan-desc">10 carrosséis contínuos 1080x1350 (4, 6 ou 8 lâminas contínuas) + Sorteio em vídeo no WhatsApp.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">300</span>
+            <span class="unit">/ 10 posts</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 150,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 150,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> 10 carrosséis panorâmicos contínuos</li>
+          <li><span class="check">✓</span> Ocupa 100% da tela do feed (1080x1350)</li>
+          <li><span class="check">✓</span> <strong>Brinde Sorteado na Roleta:</strong> Cartão Interativo, +1 Carrossel Bônus ou 1 Vídeo</li>
+          <li><span class="check">✓</span> Máximo impacto visual</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%2010%20Carross%C3%A9is%20Panor%C3%A2micos%20(R$%20300)." target="_blank" rel="noopener noreferrer" class="btn-hire outline">Contratar via WhatsApp</a>
+      </article>
+
+      <!-- PLANO 6: Combo Base -->
+      <article class="plan-card featured" data-category="combos">
+        <span class="plan-tag gold">⭐ Mais Vendido</span>
+        <h3 class="plan-title">⭐ Combo Base: Feed + Site</h3>
+        <p class="plan-desc">Feed profissional estruturado e landing page one-page pronta para converter no WhatsApp.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">400</span>
+            <span class="unit">/ combo</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 200,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 200,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> <strong>10 Carrosséis Padrão</strong> para o feed</li>
+          <li><span class="check">✓</span> <strong>Mini Site One-Page</strong> (Bio, Serviços e WhatsApp)</li>
+          <li><span class="check">✓</span> <strong>Brinde Incluso:</strong> Cartão Virtual Interativo</li>
+          <li><span class="check">✓</span> Economia de R$ 150 vs compra avulsa</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Quero%20o%20Combo%20Base%20(Feed%20%2B%20Site%20-%20R$%20400)." target="_blank" rel="noopener noreferrer" class="btn-hire primary">Garantir Combo Base</a>
+      </article>
+
+      <!-- PLANO 7: Combo Base Panorâmico -->
+      <article class="plan-card" data-category="combos">
+        <span class="plan-tag wine">Upgrade Panorâmico</span>
+        <h3 class="plan-title">🔥 Combo Panorâmico + Site</h3>
+        <p class="plan-desc">10 Carrosséis Panorâmicos de alto impacto somados ao Mini Site e Cartão Interativo.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">450</span>
+            <span class="unit">/ combo</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 225,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 225,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> 10 Carrosséis Panorâmicos 1080x1350</li>
+          <li><span class="check">✓</span> Mini Site One-Page moderno</li>
+          <li><span class="check">✓</span> Cartão de Contato Interativo de Brinde</li>
+          <li><span class="check">✓</span> Economia de R$ 150</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Quero%20o%20Combo%20Panor%C3%A2mico%20%2B%20Site%20(R$%20450)." target="_blank" rel="noopener noreferrer" class="btn-hire outline">Garantir Combo Panorâmico</a>
+      </article>
+
+      <!-- PLANO 8: Combo Tudo Incluso Padrão -->
+      <article class="plan-card" data-category="combos">
+        <span class="plan-tag gold">Completo Padrão</span>
+        <h3 class="plan-title">🚀 Combo Tudo Incluso Padrão</h3>
+        <p class="plan-desc">10 Carrosséis Padrão + Mini Site Completo com seção de planos, outro idioma e cartão virtual.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">500</span>
+            <span class="unit">/ pacote completo</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 250,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 250,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> 10 Carrosséis Quadrados 1080x1080</li>
+          <li><span class="check">✓</span> Mini Site Completo com seção de preços</li>
+          <li><span class="check">✓</span> Versão em Outro Idioma inclusa</li>
+          <li><span class="check">✓</span> Cartão de Contato Interativo de Brinde</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Quero%20o%20Combo%20Tudo%20Incluso%20Padr%C3%A3o%20(R$%20500)." target="_blank" rel="noopener noreferrer" class="btn-hire outline">Garantir Combo Completo</a>
+      </article>
+
+      <!-- PLANO 9: Combo Tudo Incluso Panorâmico (TETO R$ 600) -->
+      <article class="plan-card teto" data-category="combos">
+        <span class="plan-tag wine">👑 TETO MÁXIMO R$ 600</span>
+        <h3 class="plan-title">👑 Combo Tudo Incluso Panorâmico</h3>
+        <p class="plan-desc">O pacote definitivo: 10 panorâmicos, mini site completo com planos e versão em outro idioma.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">600</span>
+            <span class="unit">/ teto cravado</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 300,00</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 300,00</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> <strong>10 Carrosséis Panorâmicos</strong> 1080x1350</li>
+          <li><span class="check">✓</span> <strong>Mini Site Completo</strong> com tabela de planos</li>
+          <li><span class="check">✓</span> <strong>Versão em Outro Idioma</strong> (Inglês ou Espanhol)</li>
+          <li><span class="check">✓</span> <strong>Cartão Virtual Interativo</strong></li>
+          <li><span class="check">✓</span> Rigorosamente dentro do teto de R$ 600</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Quero%20o%20Combo%20Tudo%20Incluso%20Panor%C3%A2mico%20(TETO%20R$%20600)." target="_blank" rel="noopener noreferrer" class="btn-hire primary">Garantir Combo Premium</a>
+      </article>
+
+      <!-- PLANO 9: Mini Site Avulso -->
+      <article class="plan-card" data-category="web">
+        <span class="plan-tag gold">🌐 Presença Web</span>
+        <h3 class="plan-title">🌐 Mini Site Portfólio (Avulso)</h3>
+        <p class="plan-desc">Landing page estática one-page de alta velocidade com direcionamento direto para o WhatsApp.</p>
+        
+        <div class="plan-pricing-box">
+          <div class="pricing-main">
+            <span class="currency">R$</span>
+            <span class="amount">250</span>
+            <span class="unit">a R$ 300</span>
+          </div>
+          <div class="plan-split">
+            <div>
+              <span class="lbl">Sinal Pix (50%)</span>
+              <span class="val">R$ 125 a R$ 150</span>
+            </div>
+            <div>
+              <span class="lbl">Aprovação (50%)</span>
+              <span class="val">R$ 125 a R$ 150</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="features-list">
+          <li><span class="check">✓</span> Apresentação e catálogo de serviços</li>
+          <li><span class="check">✓</span> 100% responsivo para smartphone</li>
+          <li><span class="check">✓</span> Botão flutuante para o WhatsApp</li>
+          <li><span class="check">✓</span> Versão completa c/ planos e idioma: R$ 300</li>
+        </ul>
+
+        <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20criar%20um%20Mini%20Site%20Portf%C3%B3lio." target="_blank" rel="noopener noreferrer" class="btn-hire outline">Contratar Mini Site</a>
+      </article>
+
+    </div>
+
+    <!-- Banner da Roleta de Brindes -->
+    <div class="gift-banner">
+      <span class="sticker sticker--amarelo" style="--r:-3deg; position:absolute; top:-12px; right:20px;">brinde surpresa 🎁</span>
+      <h3>🎁 Como Funciona o Brinde Sorteado na Roleta?</h3>
+      <p>Ao fechar qualquer pacote com <strong>10 carrosséis</strong> (R$ 250 ou R$ 300), <strong>eu mesma realizo o sorteio ao vivo na tela em uma roleta digital, gravo o vídeo da tela e envio para você no WhatsApp!</strong></p>
+      
+      <div class="gift-list">
+        <strong>🎉 Prêmios possíveis no sorteio em vídeo:</strong><br>
+        1. <strong>Cartão de Contato Virtual Interativo</strong> (com botões e links diretos)<br>
+        2. <strong>+1 Carrossel Bônus</strong> para o seu feed no mesmo formato contratado<br>
+        3. <strong>1 Corte de Vídeo Dinâmico</strong> (Reels / TikTok de até 60s)
+      </div>
+    </div>
+
+    <!-- Calculadora Interativa de Orçamento -->
+    <div class="sim-section">
+      <div class="sim-header">
+        <span class="sticker sticker--rosa" style="--r:2deg; float:right;">orçamento instantâneo ⚡</span>
+        <h3>⚡ Simulador de Orçamento em Tempo Real</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted); margin-top:4px;">Monte seu pacote personalizado escolhendo os itens abaixo e veja o valor total com sinal de 50%:</p>
+      </div>
+
+      <div class="sim-grid">
+        <div class="sim-items">
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🎬 Pacote 3 Vídeos (R$ 40 cada corte)</div>
+              <div class="sim-item-price">R$ 120,00</div>
+            </div>
+            <div class="counter">
+              <button class="counter-btn" onclick="updateSim('v3', -1)">-</button>
+              <span class="counter-val" id="qty-v3">1</span>
+              <button class="counter-btn" onclick="updateSim('v3', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🎬 Pacote 6 Vídeos (R$ 30 cada corte)</div>
+              <div class="sim-item-price">R$ 180,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('v6', -1)">-</button>
+              <span class="counter-val" id="qty-v6">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('v6', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🎬 Pacote 10 Vídeos (R$ 25 cada corte)</div>
+              <div class="sim-item-price">R$ 250,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('v10', -1)">-</button>
+              <span class="counter-val" id="qty-v10">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('v10', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🎬 Vídeo Avulso Dinâmico (Reels/TikTok)</div>
+              <div class="sim-item-price">R$ 45,00</div>
+            </div>
+            <div class="counter">
+              <button class="counter-btn" onclick="updateSim('v1', -1)">-</button>
+              <span class="counter-val" id="qty-v1">0</span>
+              <button class="counter-btn" onclick="updateSim('v1', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">📱 10 Carrosséis Padrão + Brinde</div>
+              <div class="sim-item-price">R$ 250,00</div>
+            </div>
+            <div class="counter">
+              <button class="counter-btn" onclick="updateSim('c10p', -1)">-</button>
+              <span class="counter-val" id="qty-c10p">0</span>
+              <button class="counter-btn" onclick="updateSim('c10p', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🔥 10 Carrosséis Panorâmicos + Brinde</div>
+              <div class="sim-item-price">R$ 300,00</div>
+            </div>
+            <div class="counter">
+              <button class="counter-btn" onclick="updateSim('c10pano', -1)">-</button>
+              <span class="counter-val" id="qty-c10pano">0</span>
+              <button class="counter-btn" onclick="updateSim('c10pano', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">⭐ Combo Base: 10 Carrosséis + Mini Site</div>
+              <div class="sim-item-price">R$ 400,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('comboBase', -1)">-</button>
+              <span class="counter-val" id="qty-comboBase">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('comboBase', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🔥 Combo Panorâmico + Mini Site</div>
+              <div class="sim-item-price">R$ 450,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('comboPano', -1)">-</button>
+              <span class="counter-val" id="qty-comboPano">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('comboPano', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🚀 Combo Tudo Incluso Padrão</div>
+              <div class="sim-item-price">R$ 500,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('comboTudoPadrao', -1)">-</button>
+              <span class="counter-val" id="qty-comboTudoPadrao">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('comboTudoPadrao', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">👑 Combo Tudo Incluso Panorâmico (TETO)</div>
+              <div class="sim-item-price">R$ 600,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('comboTeto', -1)">-</button>
+              <span class="counter-val" id="qty-comboTeto">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('comboTeto', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🌐 Mini Site Simples Avulso</div>
+              <div class="sim-item-price">R$ 250,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('siteSimples', -1)">-</button>
+              <span class="counter-val" id="qty-siteSimples">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('siteSimples', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">🌐 Mini Site Completo Avulso</div>
+              <div class="sim-item-price">R$ 300,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('siteCompleto', -1)">-</button>
+              <span class="counter-val" id="qty-siteCompleto">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('siteCompleto', 1)">+</button>
+            </div>
+          </div>
+
+          <div class="sim-item-row">
+            <div>
+              <div class="sim-item-title">💳 Cartão de Contato Virtual Avulso</div>
+              <div class="sim-item-price">R$ 50,00</div>
+            </div>
+            <div class="counter">
+              <button type="button" class="counter-btn" onclick="updateSim('cartao', -1)">-</button>
+              <span class="counter-val" id="qty-cartao">0</span>
+              <button type="button" class="counter-btn" onclick="updateSim('cartao', 1)">+</button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="sim-summary">
+          <div>
+            <span style="font-size:0.75rem; text-transform:uppercase; font-weight:800; color:var(--text-muted); letter-spacing:0.05em;">Total Estimado do Projeto</span>
+            <div class="sim-total-num" id="simTotalDisplay">R$ 120,00</div>
+
+            <div class="sim-split-card">
+              <div style="display:flex; justify-content:space-between; margin-bottom:0.4rem;">
+                <span style="color:#A2B1C2;">Sinal Pix (50% no início):</span>
+                <strong id="simEntryDisplay" style="color:var(--gold-400);">R$ 60,00</strong>
+              </div>
+              <div style="display:flex; justify-content:space-between;">
+                <span style="color:#A2B1C2;">Saldo na Aprovação (50%):</span>
+                <strong id="simFinalDisplay" style="color:var(--gold-400);">R$ 60,00</strong>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="btn-whatsapp-send" id="btnSimWhatsApp" target="_blank">
+            💬 Enviar Orçamento no WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Políticas e Transparência -->
+    <div class="policy-box">
+      <div class="policy-grid">
+        <div class="policy-card">
+          <div class="policy-title">📌 Teto Máximo em Combos</div>
+          <div class="policy-text">Nenhum combo completo do portfólio ultrapassa R$ 600,00. Você tem presença web e feed de alto padrão pelo melhor custo-benefício.</div>
+        </div>
+        <div class="policy-card">
+          <div class="policy-title">💳 Pagamento Facilitado 50/50</div>
+          <div class="policy-text">Sempre 50% de sinal via Pix para início dos trabalhos e reserva de agenda, e os 50% restantes somente após a aprovação final.</div>
+        </div>
+        <div class="policy-card">
+          <div class="policy-title">📝 1 Revisão por Dia pelo Cliente</div>
+          <div class="policy-text">Para manter agilidade e organização, caso queira solicitar mudanças, envie todos os pontos compilados em uma única lista diária.</div>
+        </div>
+        <div class="policy-card">
+          <div class="policy-title">🎨 Liberdade Criativa do Designer</div>
+          <div class="policy-text">A designer tem total autonomia técnica para aplicar melhorias e refinamentos contínuos ao longo da produção para atingir o melhor resultado.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>Camilla Paschoal · Designer de Social Media & Presença Digital &copy; 2026</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // ══ Modo Claro / Escuro sincronizado com o portfólio ══
+    function updateThemeUI(t) {
+      document.getElementById('themeIcon').innerText = t === 'dark' ? '☀️' : '🌙';
+      document.getElementById('themeLabel').innerText = t === 'dark' ? 'Modo Claro' : 'Modo Escuro';
+    }
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      try { localStorage.setItem('tema', next); } catch(e) {}
+      updateThemeUI(next);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const tema = document.documentElement.getAttribute('data-theme') || 'dark';
+      updateThemeUI(tema);
+    });
+
+    // ══ Filtro de Categorias ══
+    function filterPlans(cat) {
+      document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const cards = document.querySelectorAll('.plan-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // ══ Calculadora de Orçamento ══
+    const prices = {
+      v3: { name: "Pacote 3 Vídeos (R$ 40/cada)", price: 120 },
+      v6: { name: "Pacote 6 Vídeos (R$ 30/cada)", price: 180 },
+      v10: { name: "Pacote 10 Vídeos (R$ 25/cada)", price: 250 },
+      v1: { name: "Corte de Vídeo Avulso", price: 45 },
+      c10p: { name: "10 Carrosséis Padrão + Brinde", price: 250 },
+      c10pano: { name: "10 Carrosséis Panorâmicos + Brinde", price: 300 },
+      comboBase: { name: "Combo Base: 10 Carrosséis + Site", price: 400 },
+      comboPano: { name: "Combo Panorâmico + Mini Site", price: 450 },
+      comboTudoPadrao: { name: "Combo Tudo Incluso Padrão", price: 500 },
+      comboTeto: { name: "Combo Tudo Incluso Panorâmico", price: 600 },
+      siteSimples: { name: "Mini Site Simples Avulso", price: 250 },
+      siteCompleto: { name: "Mini Site Completo Avulso", price: 300 },
+      cartao: { name: "Cartão de Contato Virtual Avulso", price: 50 }
+    };
+
+    const simState = {
+      v3: 1,
+      v6: 0,
+      v10: 0,
+      v1: 0,
+      c10p: 0,
+      c10pano: 0,
+      comboBase: 0,
+      comboPano: 0,
+      comboTudoPadrao: 0,
+      comboTeto: 0,
+      siteSimples: 0,
+      siteCompleto: 0,
+      cartao: 0
+    };
+
+    function updateSim(key, delta) {
+      simState[key] = Math.max(0, simState[key] + delta);
+      document.getElementById('qty-' + key).innerText = simState[key];
+      calculateSim();
+    }
+
+    function calculateSim() {
+      let total = 0;
+      let selectedSummary = [];
+
+      for (let key in simState) {
+        const qty = simState[key];
+        if (qty > 0) {
+          total += qty * prices[key].price;
+          selectedSummary.push(`${qty}x ${prices[key].name}`);
+        }
+      }
+
+      const totalFormatted = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+      const splitFormatted = (total * 0.5).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+      document.getElementById('simTotalDisplay').innerText = totalFormatted;
+      document.getElementById('simEntryDisplay').innerText = splitFormatted;
+      document.getElementById('simFinalDisplay').innerText = splitFormatted;
+
+      let msg = `Olá Camilla! Estive no seu catálogo e simulei o seguinte projeto:\n\n`;
+      if (selectedSummary.length > 0) {
+        msg += selectedSummary.map(item => `• ${item}`).join('\n') + `\n\n`;
+      } else {
+        msg += `(Nenhum item selecionado)\n\n`;
+      }
+      msg += `💰 *Total Estimado:* ${totalFormatted}\n`;
+      msg += `💳 *Sinal Pix (50%):* ${splitFormatted}\n`;
+      msg += `Gostaria de tirar algumas dúvidas e iniciar!`;
+
+      const encodedMsg = encodeURIComponent(msg);
+      document.getElementById('btnSimWhatsApp').href = `https://wa.me/5521982566564?text=${encodedMsg}`;
+    }
+
+    calculateSim();
+  </script>
+</body>
+</html>

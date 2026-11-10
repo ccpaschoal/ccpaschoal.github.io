@@ -72,6 +72,18 @@ function initNavbar() {
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.getElementById('nav-menu');
 
+  const logo = document.querySelector('.nav-logo');
+  if (logo) {
+    logo.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.location.hash) {
+        window.location.href = window.location.pathname;
+      } else {
+        window.location.reload();
+      }
+    });
+  }
+
   const setOpen = (open) => {
     menu.classList.toggle('is-open', open);
     toggle.setAttribute('aria-expanded', String(open)); // rótulo fixo ("Menu"); o estado aberto/fechado vai aqui

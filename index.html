@@ -44,8 +44,8 @@
   </script>
 
   <!-- ?v= muda a cada atualização para o navegador não usar a versão antiga guardada -->
-  <link rel="stylesheet" href="styles/style.css?v=202611081329-botoes-sociais">
-  <script src="scripts/app.js?v=202611081329-botoes-sociais" defer></script>
+  <link rel="stylesheet" href="styles/style.css?v=202611100402-catalogo-cliente">
+  <script src="scripts/app.js?v=202611100402-botoes-sociais" defer></script>
 
   <script type="application/ld+json">
   {
@@ -74,10 +74,9 @@
 
   <header class="navbar">
     <nav class="container nav-container" aria-label="Menu principal">
-      <a href="https://linkedin.com/in/camillapaschoal" class="nav-logo" target="_blank" rel="noopener noreferrer">
+      <a href="index.html" class="nav-logo" aria-label="Recarregar página">
         <img class="nav-logo-img" src="assets/logo-cp-96.webp" width="36" height="36" alt="" aria-hidden="true">
         <span>Camilla Paschoal</span>
-        <span class="sr-only">no LinkedIn (abre em nova aba)</span>
       </a>
 
       <ul class="nav-menu" id="nav-menu">
@@ -85,6 +84,7 @@
         <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
         <li><a href="#servicos" class="nav-link">Serviços</a></li>
         <li><a href="#diferenciais" class="nav-link">Diferencial</a></li>
+        <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
         <li><a href="#contato" class="nav-link">Contato</a></li>
       </ul>
 
@@ -209,8 +209,8 @@
     <!-- Portfólio -->
     <section class="section" id="portfolio" aria-labelledby="portfolio-title">
       <div class="section-header tile screen">
+        <span class="sticker sticker--azul" style="--r:6deg;" aria-hidden="true">arrasta pro lado →</span>
         <h2 class="section-title" id="portfolio-title">Um pouco do que eu crio</h2>
-        <span class="sticker sticker--azul" style="--r:6deg; top:12px; right:12px;" aria-hidden="true">arrasta pro lado →</span>
         <p class="section-subtitle">Cada projeto tem sua cara e seu jeito de comunicar. Dá uma espiada:</p>
         <span class="section-hint">🔍 Toque em uma imagem para ampliar</span>
       </div>
@@ -596,8 +596,8 @@
     <!-- Serviços -->
     <section class="section screen tile" id="servicos" aria-labelledby="servicos-title">
       <div class="section-header">
+        <span class="sticker sticker--amarelo" style="--r:-5deg;" aria-hidden="true">sem enrolação ✌️</span>
         <h2 class="section-title" id="servicos-title">Como posso ajudar sua marca?</h2>
-        <span class="sticker sticker--amarelo" style="--r:-6deg; top:12px; left:12px;" aria-hidden="true">sem enrolação ✌️</span>
         <p class="section-subtitle">Do planejamento à arte final: sua comunicação organizada, bonita e com a sua cara.</p>
       </div>
 
@@ -638,8 +638,8 @@
     <!-- Diferenciais -->
     <section class="section screen tile" id="diferenciais" aria-labelledby="diferenciais-title">
       <div class="section-header">
+        <span class="sticker sticker--rosa" style="--r:7deg;" aria-hidden="true">detalhista assumida 🤓</span>
         <h2 class="section-title" id="diferenciais-title">Mais do que criar artes</h2>
-        <span class="sticker sticker--rosa" style="--r:7deg; top:12px; right:12px;" aria-hidden="true">detalhista assumida 🤓</span>
         <p class="section-subtitle">Quero que sua ideia ganhe vida (e muitos likes).</p>
       </div>
 
@@ -710,10 +710,322 @@
       </div>
     </section>
 
+    <!-- Planos & Preços -->
+    <section class="section screen tile" id="planos" aria-labelledby="planos-title">
+      <div class="section-header">
+        <span class="sticker sticker--amarelo" style="--r:6deg;" aria-hidden="true">preço justo & direto 🏷️</span>
+        <h2 class="section-title" id="planos-title">Tabela de Planos & Preços</h2>
+        <p class="section-subtitle">Valores transparentes, combos completos limitados a R$ 600 e condição padrão de 50% de entrada no Pix e 50% na aprovação.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Card 1: 3 Vídeos (Amarelo) -->
+        <article class="pricing-card pricing-card--featured">
+          <span class="pricing-tag">🔥 R$ 40 cada corte</span>
+          <h3 class="pricing-title">🎬 Pacote 3 Vídeos Dinâmicos</h3>
+          <p class="pricing-desc">Edição dinâmica para Reels e TikTok com cortes de respiro, legendas animadas sincronizadas e capas inclusas.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">120</span>
+              <span class="unit">/ 3 vídeos</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 60,00</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 60,00</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> 3 edições dinâmicas de até 60s</li>
+            <li><span class="check">✓</span> Cortes de erros, pausas e silêncio</li>
+            <li><span class="check">✓</span> Legendas sincronizadas e animadas</li>
+            <li><span class="check">✓</span> Capa estática para feed inclusa</li>
+            <li><span class="check">✓</span> 1 revisão diária inclusa</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%20o%20Pacote%20de%203%20V%C3%ADdeos%20(R$%20120)." target="_blank" rel="noopener noreferrer" class="btn btn-primary pricing-btn">Contratar via WhatsApp</a>
+        </article>
+
+        <!-- Card 2: 6 Vídeos (Vermelho) -->
+        <article class="pricing-card">
+          <span class="pricing-tag">⚡ R$ 30 cada corte</span>
+          <h3 class="pricing-title">🎬 Pacote 6 Vídeos Dinâmicos</h3>
+          <p class="pricing-desc">Frequência ideal para manter o perfil ativo com vídeos curtos e acelerar engajamento.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">180</span>
+              <span class="unit">/ 6 vídeos</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 90,00</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 90,00</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> 6 edições dinâmicas de até 60s</li>
+            <li><span class="check">✓</span> Ritmo acelerado para alta retenção</li>
+            <li><span class="check">✓</span> Legendas dinâmicas sincronizadas</li>
+            <li><span class="check">✓</span> 6 capas para Reels inclusas</li>
+            <li><span class="check">✓</span> 1 revisão diária inclusa</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%20o%20Pacote%20de%206%20V%C3%ADdeos%20(R$%20180)." target="_blank" rel="noopener noreferrer" class="btn btn-outline pricing-btn">Contratar via WhatsApp</a>
+        </article>
+
+        <!-- Card 3: 10 Vídeos (Azul) -->
+        <article class="pricing-card pricing-card--sky">
+          <span class="pricing-tag">🚀 R$ 25 cada corte</span>
+          <h3 class="pricing-title">🎬 Pacote 10 Vídeos Dinâmicos</h3>
+          <p class="pricing-desc">Escala completa de conteúdo em vídeo para o mês com o menor custo por unidade.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">250</span>
+              <span class="unit">/ 10 vídeos</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 125,00</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 125,00</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> 10 edições dinâmicas de até 60s</li>
+            <li><span class="check">✓</span> Apenas R$ 25,00 por corte!</li>
+            <li><span class="check">✓</span> Legendas dinâmicas sincronizadas</li>
+            <li><span class="check">✓</span> 10 capas para Reels inclusas</li>
+            <li><span class="check">✓</span> Economia máxima em volume</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%20o%20Pacote%20de%2010%20V%C3%ADdeos%20(R$%20250)." target="_blank" rel="noopener noreferrer" class="btn btn-outline pricing-btn">Contratar via WhatsApp</a>
+        </article>
+
+        <!-- Card 4: 10 Carrosséis Padrão (Amarelo) -->
+        <article class="pricing-card pricing-card--featured">
+          <span class="pricing-tag">🎁 Brinde Sorteado</span>
+          <h3 class="pricing-title">📱 10 Carrosséis Padrão</h3>
+          <p class="pricing-desc">10 carrosséis 1080x1080 com até 10 slides cada + Sorteio de brinde em vídeo enviado no WhatsApp.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">250</span>
+              <span class="unit">/ 10 posts</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 125,00</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 125,00</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> 10 carrosséis quadrados (até 10 slides)</li>
+            <li><span class="check">✓</span> Design estratégico com retenção</li>
+            <li><span class="check">✓</span> <strong>Brinde Sorteado na Roleta:</strong> Cartão Interativo, +1 Carrossel Bônus ou 1 Vídeo</li>
+            <li><span class="check">✓</span> 1 revisão unificada por dia</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%20o%20Pacote%20de%2010%20Carross%C3%A9is%20Padr%C3%A3o%20(R$%20250)." target="_blank" rel="noopener noreferrer" class="btn btn-primary pricing-btn">Contratar via WhatsApp</a>
+        </article>
+
+        <!-- Card 5: 10 Carrosséis Panorâmicos (Vermelho) -->
+        <article class="pricing-card">
+          <span class="pricing-tag">🔥 1080x1350 Contínuo</span>
+          <h3 class="pricing-title">🔥 10 Carrosséis Panorâmicos</h3>
+          <p class="pricing-desc">10 carrosséis contínuos 1080x1350 (4/6/8 lâminas sem quebras) + Sorteio de brinde em vídeo.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">300</span>
+              <span class="unit">/ 10 posts</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 150,00</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 150,00</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> 10 carrosséis panorâmicos contínuos</li>
+            <li><span class="check">✓</span> Ocupa 100% da tela do feed (1080x1350)</li>
+            <li><span class="check">✓</span> <strong>Brinde Sorteado na Roleta:</strong> Cartão Interativo, +1 Carrossel Bônus ou 1 Vídeo</li>
+            <li><span class="check">✓</span> Máximo impacto visual</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20contratar%20o%20Pacote%20de%2010%20Carross%C3%A9is%20Panor%C3%A2micos%20(R$%20300)." target="_blank" rel="noopener noreferrer" class="btn btn-outline pricing-btn">Contratar via WhatsApp</a>
+        </article>
+
+        <!-- Card 6: Mini Site Avulso (Azul) -->
+        <article class="pricing-card pricing-card--sky">
+          <span class="pricing-tag">🌐 Presença Web</span>
+          <h3 class="pricing-title">🌐 Mini Site Portfólio (Avulso)</h3>
+          <p class="pricing-desc">Landing page one-page de alta velocidade e design sob medida, com botão flutuante para o WhatsApp.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">250</span>
+              <span class="unit">a R$ 300</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 125 a R$ 150</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 125 a R$ 150</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Apresentação e catálogo de serviços</li>
+            <li><span class="check">✓</span> 100% responsivo para smartphone</li>
+            <li><span class="check">✓</span> Botão flutuante direto para o WhatsApp</li>
+            <li><span class="check">✓</span> Versão completa c/ planos e idioma: R$ 300</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20desenvolver%20um%20Mini%20Site%20Portf%C3%B3lio." target="_blank" rel="noopener noreferrer" class="btn btn-outline pricing-btn">Contratar Mini Site</a>
+        </article>
+
+        <!-- Card 7: Combo Base (Amarelo) -->
+        <article class="pricing-card pricing-card--featured">
+          <span class="pricing-tag">⭐ Mais Vendido</span>
+          <h3 class="pricing-title">⭐ Combo Base: Feed + Site</h3>
+          <p class="pricing-desc">Feed profissional estruturado e landing page one-page pronta para converter no WhatsApp.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">400</span>
+              <span class="unit">/ combo</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 200,00</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 200,00</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> <strong>10 Carrosséis Padrão</strong> para o feed</li>
+            <li><span class="check">✓</span> <strong>Mini Site One-Page</strong> (Bio, Serviços e WhatsApp)</li>
+            <li><span class="check">✓</span> <strong>Brinde Incluso:</strong> Cartão de Contato Virtual</li>
+            <li><span class="check">✓</span> Economia de R$ 150 vs avulso</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Gostaria%20de%20fechar%20o%20Combo%20Base%20(Carross%C3%A9is%20%2B%20Mini%20Site%20-%20R$%20400)." target="_blank" rel="noopener noreferrer" class="btn btn-primary pricing-btn">Garantir Combo Base</a>
+        </article>
+
+        <!-- Card 8: Combo Base Panorâmico (Vermelho) -->
+        <article class="pricing-card">
+          <span class="pricing-tag">🔥 Upgrade Panorâmico</span>
+          <h3 class="pricing-title">🔥 Combo Panorâmico + Site</h3>
+          <p class="pricing-desc">10 Carrosséis Panorâmicos de alto impacto somados ao Mini Site e Cartão Interativo.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">450</span>
+              <span class="unit">/ combo</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 225,00</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 225,00</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> <strong>10 Carrosséis Panorâmicos</strong> 1080x1350</li>
+            <li><span class="check">✓</span> <strong>Mini Site One-Page</strong> moderno e rápido</li>
+            <li><span class="check">✓</span> <strong>Brinde Incluso:</strong> Cartão Virtual Interativo</li>
+            <li><span class="check">✓</span> Economia de R$ 150 vs avulso</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Quero%20o%20Combo%20Panor%C3%A2mico%20%2B%20Site%20(R$%20450)." target="_blank" rel="noopener noreferrer" class="btn btn-outline pricing-btn">Garantir Combo Panorâmico</a>
+        </article>
+
+        <!-- Card 9: Combo Tudo Incluso Panorâmico - TETO R$ 600 (Azul) -->
+        <article class="pricing-card pricing-card--sky">
+          <span class="pricing-tag">👑 TETO MÁXIMO R$ 600</span>
+          <h3 class="pricing-title">👑 Combo Tudo Incluso Panorâmico</h3>
+          <p class="pricing-desc">A experiência máxima: 10 panorâmicos, mini site completo com planos e versão em outro idioma.</p>
+          <div class="pricing-box">
+            <div class="pricing-amount">
+              <span class="currency">R$</span>
+              <span class="val">600</span>
+              <span class="unit">/ completo</span>
+            </div>
+            <div class="pricing-split">
+              <div>
+                <span class="split-lbl">Sinal Pix (50%)</span>
+                <span class="split-val">R$ 300,00</span>
+              </div>
+              <div>
+                <span class="split-lbl">Aprovação (50%)</span>
+                <span class="split-val">R$ 300,00</span>
+              </div>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> <strong>10 Carrosséis Panorâmicos</strong> 1080x1350</li>
+            <li><span class="check">✓</span> <strong>Mini Site Completo</strong> com seção de planos</li>
+            <li><span class="check">✓</span> <strong>Versão em Outro Idioma</strong> (Inglês/Espanhol)</li>
+            <li><span class="check">✓</span> <strong>Cartão Virtual Interativo</strong> incluso</li>
+            <li><span class="check">✓</span> Teto cravado em R$ 600,00</li>
+          </ul>
+          <a href="https://wa.me/5521982566564?text=Ol%C3%A1%20Camilla!%20Quero%20o%20Combo%20Tudo%20Incluso%20Panor%C3%A2mico%20(TETO%20R$%20600)." target="_blank" rel="noopener noreferrer" class="btn btn-primary pricing-btn">Garantir Combo Completo</a>
+        </article>
+
+      </div>
+
+      <!-- Banner de Regras e Sorteio de Brinde -->
+      <div class="pricing-banner">
+        <h3>🎁 Como funciona o Brinde Sorteado na Roleta?</h3>
+        <p>Ao fechar qualquer pacote com <strong>10 carrosséis</strong> (R$ 250 ou R$ 300), <strong>eu mesma realizo o sorteio ao vivo na tela em uma roleta digital, gravo o vídeo da tela e envio para você no WhatsApp!</strong> Você pode ganhar: um Cartão de Contato Interativo, +1 Carrossel Bônus ou 1 Vídeo Dinâmico.</p>
+        <p style="margin-top: 10px; font-size: 0.82rem; color: var(--text-muted);">
+          📌 <strong>Políticas gerais:</strong> Pagamento padrão de 50% de entrada via Pix e 50% na aprovação. O cliente tem direito a 1 solicitação de revisão por dia (enviada em lista única). A designer possui autonomia técnica e estética contínua para refinamentos de qualidade.
+        </p>
+      </div>
+
+      <!-- Link para o Catálogo Completo -->
+      <div style="text-align: center; margin-top: 24px;">
+        <a href="catalogo.html" class="btn btn-primary" style="padding: 14px 26px; font-size: 0.95rem; font-weight: 700; display: inline-flex; align-items: center; gap: 8px;">
+          📖 Ver Catálogo Completo com Simulador de Orçamento →
+        </a>
+      </div>
+    </section>
+
     <!-- Contato -->
     <section class="section contact tile screen" id="contato" aria-labelledby="contato-title">
+      <span class="sticker sticker--azul" style="--r:-8deg;" aria-hidden="true">respondo rapidinho ⚡</span>
       <h2 id="contato-title">Tem uma ideia? Vamos conversar!</h2>
-      <span class="sticker sticker--azul" style="--r:-8deg; top:12px; right:12px;" aria-hidden="true">respondo rapidinho ⚡</span>
       <p>Tem um negócio, trabalha por conta própria ou cria conteúdo? Bora deixar sua comunicação mais interessante!</p>
       <p>Me conta sua ideia. Prometo não responder só com "kkkk".</p>
       <p class="contact-cta">Vamos tirar esse projeto do papel?</p>
